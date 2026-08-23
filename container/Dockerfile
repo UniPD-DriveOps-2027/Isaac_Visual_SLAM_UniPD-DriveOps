@@ -27,7 +27,7 @@ COPY src ./src
 RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     && colcon build --merge-install --cmake-args -DBUILD_TESTING=OFF
 
-COPY entrypoint.sh /usr/local/bin/bfmc-isaac-entrypoint
+COPY container/entrypoint.sh /usr/local/bin/bfmc-isaac-entrypoint
 RUN chmod +x /usr/local/bin/bfmc-isaac-entrypoint
 
 ENTRYPOINT ["/usr/local/bin/bfmc-isaac-entrypoint"]
